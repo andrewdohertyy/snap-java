@@ -1,9 +1,7 @@
 import java.util.Scanner;
 
 public class Player {
-
     public static boolean twoPlayer;
-
     public void startTwoPlayerGame() {
 
         Deck deck = new Deck();
@@ -11,23 +9,26 @@ public class Player {
         String playerTwoCard;
 
         System.out.println("-----------------------Rules-----------------------");
-        System.out.println("Click enter to pick up a random card from the deck");
-        System.out.println("When a number is matched you have 2 seconds to type 'snap' to win and beat your opponent");
+        System.out.println("Player 1 click enter to pick up a random card from the deck");
+        System.out.println("player 2 you can pick up the second card by clicking enter");
+        System.out.println("When a number is matched you have 2 seconds to type 'snap' to win and beat your opponent, so be quick!");
 
         deck.shuffleDeck();
 
-        System.out.println("The deck is shuffled... click enter again to start");
+        System.out.println("The deck is shuffled... click enter to start");
 
         Scanner scanner = new Scanner(System.in);
 
         while (!twoPlayer) {
 
-            String first = scanner.nextLine();
+            scanner.nextLine();
             playerOneCard = String.valueOf(deck.removeTopCard());
             System.out.println(playerOneCard);
-            String second = scanner.nextLine();
+            System.out.println("-------------------------------");
+            scanner.nextLine();
             playerTwoCard = String.valueOf(deck.removeTopCard());
             System.out.println(playerTwoCard);
+            System.out.println("-------------------------------");
 
             if (playerOneCard.substring(0, 1).equals(playerTwoCard.substring(0, 1))) {
                 long startTime = System.currentTimeMillis();
@@ -46,4 +47,5 @@ public class Player {
                 }
             }
         }
-    }}
+    }
+}

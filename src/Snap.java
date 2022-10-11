@@ -15,16 +15,16 @@ public class Snap {
         System.out.println("When a number is matched the game is over and the player wins");
 
         deck.shuffleDeck();
-        System.out.println("The deck is shuffled... click enter again to start");
+        System.out.println("The deck is shuffled... click enter to start");
 
         Scanner scanner = new Scanner(System.in);
 
         while (!match) {
 
-            String first = scanner.nextLine();
+            scanner.nextLine();
             card1 = String.valueOf(deck.removeTopCard());
             System.out.println(card1);
-            String second = scanner.nextLine();
+            scanner.nextLine();
             card2 = String.valueOf(deck.removeTopCard());
             System.out.println(card2);
 

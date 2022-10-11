@@ -32,7 +32,6 @@ public class Deck {
         Collections.sort(this.deckOfCards, Comparator.comparing(Card::getSuit));
         return this.deckOfCards;
     }
-
     public ArrayList<Card> sortDeckIntoNumberOrder(){
         Collections.sort(this.deckOfCards, Comparator.comparingInt(Card::getValue));
         return this.deckOfCards;
